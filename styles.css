@@ -17,7 +17,7 @@
   --color-text-primary: #2C2416;
   --color-text-secondary: #5C5347;
   --color-text-muted: #8B8175;
-  
+
   /* Floral Colors */
   --color-rose: #E8A5A5;
   --color-pink: #F4C2D9;
@@ -27,22 +27,22 @@
   --color-coral: #F5A5B8;
   --color-lilac: #D4B5E8;
   --color-blush: #F5D5E0;
-  
+
   /* Greens for Stems/Leaves */
   --color-green-dark: #4A6B4F;
   --color-green-medium: #6B8E6F;
   --color-green-light: #8FAF92;
-  
+
   /* Accent Colors */
   --color-accent: #D4A574;
   --color-accent-light: #E8C9A0;
   --color-shadow: rgba(44, 36, 22, 0.08);
   --color-shadow-strong: rgba(44, 36, 22, 0.15);
-  
+
   /* Typography */
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Inter', sans-serif;
-  
+
   /* Spacing */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
@@ -50,18 +50,18 @@
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
   --spacing-2xl: 4rem;
-  
+
   /* Border Radius */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 20px;
   --radius-xl: 30px;
-  
+
   /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
-  
+
   /* Shadows */
   --shadow-sm: 0 2px 8px var(--color-shadow);
   --shadow-md: 0 4px 16px var(--color-shadow);
@@ -95,7 +95,12 @@ body {
 /* ==========================================
    TYPOGRAPHY
    ========================================== */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.2;
@@ -530,6 +535,7 @@ p {
     opacity: 0;
     transform: translateY(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -541,6 +547,7 @@ p {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -552,6 +559,7 @@ p {
     opacity: 0;
     transform: scale(0);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -559,9 +567,12 @@ p {
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -578,15 +589,37 @@ p {
   text-align: center;
 }
 
-.mt-sm { margin-top: var(--spacing-sm); }
-.mt-md { margin-top: var(--spacing-md); }
-.mt-lg { margin-top: var(--spacing-lg); }
-.mt-xl { margin-top: var(--spacing-xl); }
+.mt-sm {
+  margin-top: var(--spacing-sm);
+}
 
-.mb-sm { margin-bottom: var(--spacing-sm); }
-.mb-md { margin-bottom: var(--spacing-md); }
-.mb-lg { margin-bottom: var(--spacing-lg); }
-.mb-xl { margin-bottom: var(--spacing-xl); }
+.mt-md {
+  margin-top: var(--spacing-md);
+}
+
+.mt-lg {
+  margin-top: var(--spacing-lg);
+}
+
+.mt-xl {
+  margin-top: var(--spacing-xl);
+}
+
+.mb-sm {
+  margin-bottom: var(--spacing-sm);
+}
+
+.mb-md {
+  margin-bottom: var(--spacing-md);
+}
+
+.mb-lg {
+  margin-bottom: var(--spacing-lg);
+}
+
+.mb-xl {
+  margin-bottom: var(--spacing-xl);
+}
 
 .hidden {
   display: none !important;
@@ -599,42 +632,319 @@ p {
 /* ==========================================
    RESPONSIVE DESIGN
    ========================================== */
+
+/* Large Tablets and Small Desktops (1024px and below) */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+    padding: var(--spacing-md);
+  }
+
+  .page-wrapper {
+    padding: var(--spacing-md);
+  }
+
+  .bouquet-container {
+    max-width: 500px;
+  }
+}
+
+/* Tablets (768px and below) */
 @media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
+  .page-wrapper {
+    padding: var(--spacing-sm);
+  }
+
+  .header {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .logo {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .card,
+  .glass-card {
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+  }
+
   .flower-grid {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: var(--spacing-sm);
   }
-  
-  .card,
-  .glass-card {
-    padding: var(--spacing-md);
+
+  .flower-item {
+    padding: var(--spacing-xs);
   }
-  
+
+  .flower-icon {
+    font-size: 2.5rem;
+  }
+
+  .flower-name {
+    font-size: 0.8rem;
+  }
+
   .action-buttons {
     flex-direction: column;
+    gap: var(--spacing-sm);
   }
-  
+
   .btn {
     width: 100%;
     justify-content: center;
+    padding: var(--spacing-sm) var(--spacing-md);
   }
-  
+
+  .bouquet-container {
+    max-width: 400px;
+    margin: var(--spacing-lg) auto;
+  }
+
   .arranged-flower {
     font-size: 3rem;
   }
+
+  .message-card {
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) auto;
+  }
+
+  .message-to {
+    font-size: 1.1rem;
+  }
+
+  .message-body {
+    font-size: 0.95rem;
+  }
+
+  .message-from {
+    font-size: 1rem;
+  }
+
+  .preview-section {
+    padding: var(--spacing-lg);
+  }
 }
 
+/* Mobile Devices (480px and below) */
 @media (max-width: 480px) {
-  .logo {
-    font-size: 2rem;
+  html {
+    font-size: 14px;
   }
-  
+
+  .page-wrapper {
+    padding: var(--spacing-xs);
+  }
+
+  .container {
+    padding: var(--spacing-sm);
+  }
+
+  .header {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+  }
+
+  .card,
+  .glass-card {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
   .flower-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xs);
   }
-  
+
+  .flower-item {
+    padding: var(--spacing-xs);
+    border-width: 2px;
+  }
+
+  .flower-icon {
+    font-size: 2rem;
+  }
+
+  .flower-name {
+    font-size: 0.7rem;
+  }
+
+  .flower-count {
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+    top: -6px;
+    right: -6px;
+  }
+
+  .form-group {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .form-label {
+    font-size: 0.9rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.95rem;
+  }
+
+  .form-textarea {
+    min-height: 100px;
+  }
+
+  .char-counter {
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: var(--spacing-xs) var(--spacing-md);
+  }
+
+  .action-buttons {
+    gap: var(--spacing-xs);
+  }
+
+  .bouquet-container {
+    max-width: 300px;
+    margin: var(--spacing-md) auto;
+  }
+
+  .arranged-flower {
+    font-size: 2.5rem;
+  }
+
   .message-card {
     padding: var(--spacing-md);
+    margin: var(--spacing-md) auto;
+    border-radius: var(--radius-sm);
+  }
+
+  .message-to {
+    font-size: 1rem;
+  }
+
+  .message-body {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .message-from {
+    font-size: 0.95rem;
+  }
+
+  .message-signature {
+    font-size: 0.85rem;
+  }
+
+  .preview-section {
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+
+  .preview-title {
+    font-size: 1rem;
+  }
+}
+
+/* Extra Small Mobile Devices (360px and below) */
+@media (max-width: 360px) {
+  html {
+    font-size: 13px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .flower-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .flower-icon {
+    font-size: 1.8rem;
+  }
+
+  .arranged-flower {
+    font-size: 2rem;
+  }
+
+  .bouquet-container {
+    max-width: 250px;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .flower-item {
+    /* Larger touch targets for mobile */
+    min-height: 80px;
+  }
+
+  .btn {
+    /* Larger buttons for easier tapping */
+    min-height: 44px;
+    padding: var(--spacing-sm) var(--spacing-lg);
+  }
+
+  .form-input,
+  .form-textarea {
+    /* Larger form inputs for touch */
+    min-height: 44px;
+    font-size: 16px;
+    /* Prevents zoom on iOS */
+  }
+
+  .form-textarea {
+    min-height: 120px;
+  }
+}
+
+/* Landscape Mobile Orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+  .page-wrapper {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .header {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .bouquet-container {
+    max-width: 300px;
+  }
+
+  .arranged-flower {
+    font-size: 2.5rem;
   }
 }
 
@@ -645,12 +955,12 @@ p {
   body {
     background: white;
   }
-  
+
   .btn,
   .action-buttons {
     display: none;
   }
-  
+
   .message-card {
     box-shadow: none;
     border: 2px solid var(--color-text-primary);
