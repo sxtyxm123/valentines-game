@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View your beautiful digital flower bouquet">
+    <title>Your Digital Bouquet - Digibouquet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <h1 class="logo">Digibouquet</h1>
+            <p class="tagline">Hi, I made this bouquet for you!</p>
+        </header>
+
+        <main class="container">
+            <!-- Bouquet Display -->
+            <div class="bouquet-container">
+                <div class="bouquet-display">
+                    <div class="bouquet-circle"></div>
+                    <div class="flower-arrangement" id="bouquetFlowers">
+                        <!-- Flowers will be rendered here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message Card -->
+            <div class="message-card">
+                <p class="message-to">Dear <span id="recipientName">Love</span></p>
+                <p class="message-body" id="messageBody">Your special message will appear here...</p>
+                <p class="message-from">
+                    <span class="message-signature">Sincerely,</span><br>
+                    <span id="senderName">Someone Special</span>
+                </p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn btn-secondary" id="copyLinkBtn">
+                    📋 COPY LINK
+                </button>
+                <button class="btn btn-primary" id="shareBtn">
+                    📤 SHARE
+                </button>
+            </div>
+
+            <!-- Create Your Own -->
+            <div class="text-center mt-xl">
+                <p class="text-muted mb-sm">Made with Digibouquet</p>
+                <a href="index.html" class="btn btn-outline">
+                    🌸 Make a bouquet now!
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
